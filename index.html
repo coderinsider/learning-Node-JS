@@ -15,8 +15,8 @@
         <div class="jumbotron">
             <h1 class="display-4">Send Message</h1>
             <br/>
-            <input id="name" class="form-control" placeholder="Name" type="text"><br/>
-            <textarea id="message" class="form-control" placeholder="Message" type="text"></textarea><br/>
+            <input id="name" value="" class="form-control" placeholder="Name" type="text"><br/>
+            <textarea id="message" value="" class="form-control" placeholder="Message" type="text"></textarea><br/>
             <button id="send" class="btn btn-success">Send</button>
         </div>
 
@@ -39,13 +39,19 @@
        
     })
 
+    socket.on('message', addMessages);
+
+
     function addMessages(message) {
-        $("#innerMessage").append(
+        
+            $("#innerMessage").append(
             `
             <h1>${message.name}</h1>
             <p>${message.message} </p>
             `
-        );
+            );
+       
+
     }
 
     function getMessage() {
