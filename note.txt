@@ -1,0 +1,4 @@
+# if you are git .gitignore not working. you will need to fix that.
+git rm -r --cached .
+git add .
+git commit -m 'Working there'
